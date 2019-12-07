@@ -123,6 +123,10 @@ public class Computer {
         else return Optional.of(stdout.poll());
     }
 
+    public int getStdoutSize() {
+        return stdout.size();
+    }
+
     public int getPC() {
         return PC;
     }
