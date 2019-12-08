@@ -1,12 +1,10 @@
 package day7;
-import day5.Computer; //This code reuses the day5 code
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -33,10 +31,19 @@ public class Main {
     }
 
 
+    public static void secondStatement(List<Integer> memory) {
+        int[] a = {5,6,7,8,9};
+        AmplifierTester closedLoopTest = new ClosedLoopTester();
+        System.out.println(maxSignal(closedLoopTest, memory, a, 5,5));
+    }
 
+
+    /**
+     * @
+     */
     public static int maxSignal(AmplifierTester tester, List<Integer> memory, int[] a, int size, int n) {
         if(size == 1) {
-            return tester.executeComputer(memory, a);
+            return tester.executeTest(memory, a);
         }
         int max = Integer.MIN_VALUE;
         for(int i = 0; i < size; i++) {
@@ -60,12 +67,6 @@ public class Main {
 
 
 
-
-    public static void secondStatement(List<Integer> memory) {
-        int[] a = {5,6,7,8,9};
-        AmplifierTester closedLoopTest = new ClosedLoopTester();
-        System.out.println(maxSignal(closedLoopTest, memory, a, 5,5));
-    }
 
 
 

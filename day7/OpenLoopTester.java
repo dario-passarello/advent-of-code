@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class OpenLoopTester implements AmplifierTester {
-    public int executeComputer(List<Integer> memory, int[] permutation) {
+    public int executeTest(List<Integer> memory, int[] permutation) {
         Computer computer = new Computer(memory);
         int lastSignal = 0;
         for(int i = 0; i < permutation.length; i++) {

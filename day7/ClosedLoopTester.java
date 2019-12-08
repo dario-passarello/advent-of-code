@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.Optional;
 
 public class ClosedLoopTester implements AmplifierTester {
-    public int executeComputer(List<Integer> memory, int[] permutation) {
+    public int executeTest(List<Integer> memory, int[] permutation) {
         Computer[] loop = new Computer[permutation.length];
         //Configure Phase settings for all amplifiers
         for(int i = 0; i < loop.length; i++) {
             loop[i] = new Computer(memory);
-            loop[i].addInput(permutation[i]);
+            loop[i].addInput(permutation[i]); //Add phase configuration to Computer's stdin
             loop[i].step(); //Apply phase configuration
         }
         int signalValue = 0;
