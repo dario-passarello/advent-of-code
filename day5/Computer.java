@@ -29,11 +29,14 @@ public class Computer {
     }
 
     public void addInput(Integer a) {
+
         stdin.add(a);
+        if(status == StatusCode.WAIT_INPUT && !stdin.isEmpty()) status = StatusCode.RUNNING;
     }
 
     public void addInput(List<Integer> a) {
         stdin.addAll(a);
+        if(status == StatusCode.WAIT_INPUT && !stdin.isEmpty()) status = StatusCode.RUNNING;
     }
 
     public int readMemory(int address) {
@@ -133,6 +136,10 @@ public class Computer {
 
     public StatusCode getStatus() {
         return this.status;
+    }
+
+    public void forceStop() {
+        this.status = StatusCode.TERMINATED;
     }
 
     public void printMemory() {

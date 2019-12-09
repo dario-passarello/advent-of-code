@@ -1,0 +1,117 @@
+3				-
+:x
+3				-
+:y
+2				-
+:x
+:y
+:area
+3				-:begin_loop
+:input
+01007			-
+:input
+0
+:sentinel
+1005			-
+:sentinel
+:end_loop
+7				-:if_img_state
+:img_state
+:area
+:sentinel
+1006			-
+:sentinel
+:else_img_state
+1001			-:then_img_state
+:img_state
+1
+:img_state
+1105			-:end_then_img_state
+1
+:end_if_img_state
+7				-:else_img_state
+:count_0
+:min_0
+:sentinel
+1006			-
+:sentinel
+:end_if_count_0
+1001			-
+:count_1
+0
+:max_1
+1001			-
+:count_2
+0
+:max_2
+1001			-
+:count_0
+0
+:min_0
+1101			-:end_if_count_0
+0
+0
+:count_0
+1101			-
+0
+0
+:count_1
+1101			-
+0
+0
+:count_2
+1101			-
+1
+0
+:img_state 		
+1008			-:end_if_img_state
+:input
+0
+:is_0
+1008 			-
+:input
+1
+:is_1
+1008  			-
+:input
+2
+:is_2
+1   			-
+:count_0
+:is_0
+:count_0
+1   			-
+:count_1
+:is_1
+:count_1
+1   			-
+:count_2
+:is_2
+:count_2
+1105			-
+1
+:begin_loop
+2               -:end_loop
+:max_1
+:max_2
+:out
+4				-
+:out
+99				-:halt
+0 				-:x
+0  				-:y
+0 				-:area
+0 				-:sentinel
+0 				-:input
+0 				-:img_state
+0 				-:count_0
+0 				-:count_1
+0 				-:count_2
+0 				-:is_0
+0 				-:is_1
+0 				-:is_2
+99999 			-:min_0
+-1 				-:max_1
+-1 				-:max_2
+0 				-:out
+end

@@ -41,7 +41,7 @@ def second_statement(filename):
         #check if the end of the layer is reached
         if img_state < IMAGE_WIDTH*IMAGE_HEIGHT:
             img_state += 1
-        else:
+        else:1
             img_state = 1
         #if the pixel is transparent check if there is an opaque pixel
         if layer[img_state - 1] == 2:
