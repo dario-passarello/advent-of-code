@@ -13,8 +13,8 @@ public class IntcodeConsole {
     public static void main(String args[]) {
         try{
             BufferedReader br = new BufferedReader(new FileReader(args[0])); //Open file
-            List<Integer> code = Arrays.stream(br.readLine().split(","))
-                    .map(Integer::parseInt)
+            List<Long> code = Arrays.stream(br.readLine().split(","))
+                    .map(Long::parseLong)
                     .collect(Collectors.toList());
             Computer comp = new Computer(code);
             console(comp);
@@ -103,7 +103,7 @@ public class IntcodeConsole {
                     System.out.print("stdin >");
                     String str = scanner.nextLine();
                     if(str.matches("-?\\d+")) {
-                        computer.addInput(Integer.parseInt(str));
+                        computer.addInput(Long.parseLong(str));
                         input = true;
                     }
                     else if (str.equals("quit")) {
@@ -132,8 +132,8 @@ public class IntcodeConsole {
         String path = scanner.nextLine();
         try{
             BufferedReader br = new BufferedReader(new FileReader(path)); //Open file
-            List<Integer> list = Arrays.stream(br.readLine().split(","))
-                    .map(Integer::parseInt)
+            List<Long> list = Arrays.stream(br.readLine().split(","))
+                    .map(Long::parseLong)
                     .collect(Collectors.toList());
             computer.addInput(list);
         }

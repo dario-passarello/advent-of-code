@@ -4,5 +4,5 @@ import java.util.List;
 
 @FunctionalInterface
 public interface AmplifierTester {
-    int executeTest(List<Integer> memory, int[] permutation);
+    long executeTest(List<Long> memory, int[] permutation);
 }

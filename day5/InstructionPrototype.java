@@ -10,6 +10,7 @@ public enum InstructionPrototype {
     JUMP_IF_FALSE(6,2,0b00),
     LESS_THAN(7,3, 0b001),
     EQUALS(8,3,0b001),
+    REBASE(9,1,0b0),
     TERMINATE(99,0, 0b0),
     NOT_VALID(Integer.MAX_VALUE,0, 0b0);
 
@@ -41,6 +42,8 @@ public enum InstructionPrototype {
                 return LESS_THAN;
             case 8:
                 return EQUALS;
+            case 9:
+                return REBASE;
             case 99:
                 return TERMINATE;
             default:

@@ -11,8 +11,8 @@ public class Main {
     public static void main(String[] args) {
         try{
             BufferedReader br = new BufferedReader(new FileReader("/home/dario/Desktop/PROGETTI/advent-of-code/day7/7.in")); //Open file
-            List<Integer> list = Arrays.stream(br.readLine().split(","))
-                    .map(Integer::parseInt)
+            List<Long> list = Arrays.stream(br.readLine().split(","))
+                    .map(Long::parseLong)
                     .collect(Collectors.toList());
 
             System.out.println("FIRST STATEMENT");
@@ -24,14 +24,14 @@ public class Main {
             e.printStackTrace();
         }
     }
-    public static void firstStatement(List<Integer> memory) {
+    public static void firstStatement(List<Long> memory) {
         int[] a = {0,1,2,3,4};
         AmplifierTester openLoopTester = new OpenLoopTester();
         System.out.println(maxSignal(openLoopTester, memory, a, 5,5));
     }
 
 
-    public static void secondStatement(List<Integer> memory) {
+    public static void secondStatement(List<Long> memory) {
         int[] a = {5,6,7,8,9};
         AmplifierTester closedLoopTest = new ClosedLoopTester();
         System.out.println(maxSignal(closedLoopTest, memory, a, 5,5));
@@ -41,14 +41,14 @@ public class Main {
     /**
      * @
      */
-    public static int maxSignal(AmplifierTester tester, List<Integer> memory, int[] a, int size, int n) {
+    public static long maxSignal(AmplifierTester tester, List<Long> memory, int[] a, int size, int n) {
         if(size == 1) {
             return tester.executeTest(memory, a);
         }
-        int max = Integer.MIN_VALUE;
+        long max = Long.MIN_VALUE;
         for(int i = 0; i < size; i++) {
 
-            int sig = maxSignal(tester, memory, a, size - 1, n);
+            long sig = maxSignal(tester, memory, a, size - 1, n);
             if(sig > max) max = sig;
             if(size % 2 == 1) {
                 int temp = a[0];

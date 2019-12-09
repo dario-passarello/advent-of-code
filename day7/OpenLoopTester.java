@@ -6,18 +6,18 @@ import java.util.List;
 import java.util.Optional;
 
 public class OpenLoopTester implements AmplifierTester {
-    public int executeTest(List<Integer> memory, int[] permutation) {
+    public long executeTest(List<Long> memory, int[] permutation) {
         Computer computer = new Computer(memory);
-        int lastSignal = 0;
+        long lastSignal = 0;
         for(int i = 0; i < permutation.length; i++) {
-            computer.addInput(permutation[i]);
+            computer.addInput((long) permutation[i]);
             computer.addInput(lastSignal);
             while(computer.getStatus() == Computer.StatusCode.RUNNING) {
                 computer.step();
 
             }
             assert computer.getStdoutSize() == 1;
-            Optional<Integer> opt = computer.getFirstOutput();
+            Optional<Long> opt = computer.getFirstOutput();
             if(opt.isPresent())
                 lastSignal = opt.get();
             else
