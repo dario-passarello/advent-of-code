@@ -5,7 +5,7 @@ EPSILON = 0.00000000001
 #Reads the problem input from file
 def scan_map(filename):
     pFile = open(filename,'r')
-    x = 0
+    x = 0 
     y = 0
     points = {}
     for line in pFile:
@@ -14,7 +14,7 @@ def scan_map(filename):
             if char == '#':
                 points[(x,y)] = 1
             x += 1
-        y += 1
+        y += 1 
     return points
 
 #Return the minimal ("with lowest components") integer vector with the same direction of the line from point1 and point2
